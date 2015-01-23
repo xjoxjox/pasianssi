@@ -26,6 +26,14 @@ public class Paikka {
         return this.kortti;
     }
     
+    public int getPystyrivi() {
+        return this.pystyrivi;
+    }
+    
+     public int getVaakarivi() {
+        return this.vaakarivi;
+    }
+    
     public void tyhjennaPaikka() {
         this.kortti = null;
         this.tyhjä = true;

@@ -11,6 +11,10 @@ public class Poyta {
         this.paikat = new ArrayList<Paikka>(25);
     }
     
+    public void lisaaPaikka(Paikka paikka) {
+        this.paikat.add(paikka);
+    }
+    
     public ArrayList<Paikka> getTyhjat() {
         for (int i = 0; i < this.paikat.size(); i++) {
             if (this.paikat.get(i).onkoTyhja()) {
