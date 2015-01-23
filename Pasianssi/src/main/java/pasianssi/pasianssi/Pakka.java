@@ -33,7 +33,19 @@ public class Pakka {
         this.pakka.add(kortti);
     }
     
-    public boolean onkoTyhja() {
+    public boolean onkoSekoitettuTyhja() {
         return sekoitettu.isEmpty();
+    }
+    
+    public boolean onkoPakkaTyhja() {
+        return pakka.isEmpty();
+    }
+    
+    public ArrayList<Kortti> pakanKortit() {
+        return this.pakka;
+    }
+    
+    public ArrayList<Kortti> sekoitetunPakanKortit() {
+        return this.sekoitettu;
     }
 }
