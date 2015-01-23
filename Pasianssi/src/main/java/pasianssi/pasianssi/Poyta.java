@@ -12,7 +12,9 @@ public class Poyta {
     }
     
     public void lisaaPaikka(Paikka paikka) {
-        this.paikat.add(paikka);
+        if (!this.paikat.contains(paikka)) {
+            this.paikat.add(paikka);
+        }
     }
     
     public ArrayList<Paikka> getTyhjat() {
