@@ -23,4 +23,8 @@ public class Poyta {
         }
         return this.tyhjat;
     }
+    
+    public ArrayList<Paikka> getPaikat() {
+        return this.paikat;
+    }
 }

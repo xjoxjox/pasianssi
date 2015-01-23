@@ -12,6 +12,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import pasianssi.pasianssi.Kortti;
 import pasianssi.pasianssi.Paikka;
+import pasianssi.pasianssi.Poyta;
 
 /**
  *
@@ -78,6 +79,32 @@ public class PasianssiTest {
         
         paikka.asetaKortti(kortti);
         boolean tyhja = paikka.onkoTyhja(); 
+
+        assertEquals(false, tyhja);
+    }
+    
+    @Test
+    public void tyhjentaaPaikanOikein() {
+        Paikka paikka = new Paikka(1, 1);
+        Kortti kortti = new Kortti(1, "hertta");
+        
+        paikka.asetaKortti(kortti);
+        paikka.tyhjennaPaikka();
+        boolean tyhja = paikka.onkoTyhja(); 
+
+        assertEquals(true, tyhja);
+    }
+    
+    @Test
+    public void asettaaPaikanPoydalle() {
+        Poyta poyta = new Poyta();
+        Paikka paikka = new Paikka(1, 1);
+        
+        poyta.lisaaPaikka(paikka);
+        boolean tyhja = true;
+        if (!poyta.getPaikat().isEmpty()) {
+            tyhja = false;
+        }
 
         assertEquals(false, tyhja);
     }
