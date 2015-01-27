@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="pasianssi.pasianssi.PakkaTest" time="0" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="pasianssi.pasianssi.PakkaTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin"/>
@@ -15,7 +15,6 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="pasianssi.pasianssi.**.*Test"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi"/>
     <property name="java.runtime.version" value="1.8.0_25-b18"/>
@@ -28,6 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
+    <property name="net.sourceforge.cobertura.datafile" value="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\target\cobertura\cobertura.ser"/>
     <property name="maven.ext.class.path" value="D:\NetBeans\tmcbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="D:\NetBeans\tmcbeans\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
@@ -46,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_25\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=pasianssi.pasianssi.**.*Test -Dmaven.ext.class.path=D:\NetBeans\tmcbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=D:\NetBeans\tmcbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 cobertura:cobertura"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="user.language.format" value="fi"/>
@@ -61,9 +61,12 @@
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="project.build.outputDirectory" value="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\target\generated-classes\cobertura"/>
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="pasianssi.pasianssi.PakkaTest" name="asettaaOikeanArvoisenKortinPakkaan" time="0"/>
+  <testcase classname="pasianssi.pasianssi.PakkaTest" name="poistaaKortinPakasta" time="0"/>
   <testcase classname="pasianssi.pasianssi.PakkaTest" name="asettaaKortinPakkaan" time="0"/>
+  <testcase classname="pasianssi.pasianssi.PakkaTest" name="sekoittaaPakan" time="0"/>
 </testsuite>

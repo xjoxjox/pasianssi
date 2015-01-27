@@ -5,10 +5,9 @@ import java.util.ArrayList;
 
 public class Poyta {
     private ArrayList<Paikka> paikat;
-    private ArrayList<Paikka> tyhjat;
     
     public Poyta() {
-        this.paikat = new ArrayList<Paikka>(25);
+        this.paikat = new ArrayList<>(25);
     }
     
     public void lisaaPaikka(Paikka paikka) {
@@ -18,15 +17,40 @@ public class Poyta {
     }
     
     public ArrayList<Paikka> getTyhjat() {
-        for (int i = 0; i < this.paikat.size(); i++) {
-            if (this.paikat.get(i).onkoTyhja()) {
-                this.tyhjat.add(this.paikat.get(i));
+        ArrayList<Paikka> tyhjat = new ArrayList<>(25);
+        for (Paikka paikka : this.paikat) {
+            if (paikka.onkoTyhja()) {
+                tyhjat.add(paikka);
             }
         }
-        return this.tyhjat;
+        return tyhjat;
     }
     
     public ArrayList<Paikka> getPaikat() {
         return this.paikat;
+    }
+    
+    public boolean onkoKorttienValissaTyhjia() {
+        for (int i = 0; i < this.paikat.size()-1; i++) {
+            if (this.paikat.get(i).onkoTyhja()) {             
+                for (int j = i+1; j < this.paikat.size(); j++) {
+                    if (!this.paikat.get(j).onkoTyhja()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    public Paikka viimeinenPaikkaJossaKortti() {
+        Paikka viimeinen = this.paikat.get(0);
+        for (int i = 1; i <= this.paikat.size(); i++) {
+            if (!this.paikat.get(this.paikat.size()-i).onkoTyhja()) {
+                viimeinen = this.paikat.get(this.paikat.size()-i);
+                return viimeinen;
+            }
+        }
+        return viimeinen;
     }
 }

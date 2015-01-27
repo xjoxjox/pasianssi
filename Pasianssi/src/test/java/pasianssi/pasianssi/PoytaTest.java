@@ -25,7 +25,7 @@ public class PoytaTest {
     }
     
     @Test
-    public void nayttaaTyhjatOikein() {      
+    public void nayttaaPaikatOikein() {      
         poyta.lisaaPaikka(paikka);
         poyta.lisaaPaikka(new Paikka(3,4));
         poyta.lisaaPaikka(new Paikka(4,4));
@@ -34,9 +34,54 @@ public class PoytaTest {
     }
     
     @Test
-    public void eiAsetaPaikkaaJosSeOnPoydalla() {      
+    public void nayttaaTyhjatPaikatOikein() {      
         poyta.lisaaPaikka(paikka);
+        poyta.lisaaPaikka(new Paikka(3,4));
+        poyta.lisaaPaikka(new Paikka(4,4));
+        poyta.lisaaPaikka(new Paikka(1,4));
+        assertEquals(4, poyta.getTyhjat().size());
+    }
+    
+    @Test
+    public void palauttaaOikeanArvonJosKorttienValissaOnTyhjiaPaikkoja() {
+        paikka.asetaKortti(new Kortti(1, "hertta"));
+        Paikka paikka2 = new Paikka(3,4);
+        Paikka paikka3 = new Paikka(4,4);
+        paikka3.asetaKortti(new Kortti(4, "hertta"));
+        Paikka paikka4 = new Paikka(1,4);
+        paikka4.asetaKortti(new Kortti(6, "hertta"));
+        Paikka paikka5 = new Paikka(2,5);
+        Paikka paikka6 = new Paikka(1,2);
+        paikka6.asetaKortti(new Kortti(8, "hertta"));
         poyta.lisaaPaikka(paikka);
-        assertEquals(1, poyta.getPaikat().size());
-    }   
+        poyta.lisaaPaikka(paikka2);
+        poyta.lisaaPaikka(paikka3);
+        poyta.lisaaPaikka(paikka4);
+        poyta.lisaaPaikka(paikka5);
+        poyta.lisaaPaikka(paikka6);
+        
+        assertTrue(poyta.onkoKorttienValissaTyhjia());
+    }
+    
+    @Test
+    public void palauttaaOikeanPaikanJossaViimeinenKortti() {
+        paikka.asetaKortti(new Kortti(1, "hertta"));
+        Paikka paikka2 = new Paikka(3,4);
+        Paikka paikka3 = new Paikka(4,4);
+        paikka3.asetaKortti(new Kortti(4, "hertta"));
+        Paikka paikka4 = new Paikka(1,4);
+        paikka4.asetaKortti(new Kortti(6, "hertta"));
+        Paikka paikka5 = new Paikka(2,5);
+        paikka5.asetaKortti(new Kortti(8, "hertta"));
+        Paikka paikka6 = new Paikka(1,2);
+        
+        poyta.lisaaPaikka(paikka);
+        poyta.lisaaPaikka(paikka2);
+        poyta.lisaaPaikka(paikka3);
+        poyta.lisaaPaikka(paikka4);
+        poyta.lisaaPaikka(paikka5);
+        poyta.lisaaPaikka(paikka6);
+        
+        assertEquals(paikka5, poyta.viimeinenPaikkaJossaKortti());
+    }
 }
