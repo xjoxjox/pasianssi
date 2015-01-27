@@ -5,3 +5,5 @@ Tuntikirjanpito
 23.01.2015  6h  Koodin kirjoitusta, testien luomista, pit-testaus
 
 27.01.2015  4h  Jakaja-luokan koodausta, testien laajennusta ja mutanttien tappamista
+
+27.01.2015  2h ParienTarkastaja-luokan ja -testiluokan koodausta, Javadocia
