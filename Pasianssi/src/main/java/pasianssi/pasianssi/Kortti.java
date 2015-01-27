@@ -1,6 +1,8 @@
 
 package pasianssi.pasianssi;
-
+/**
+ * Luokka luo kortit, joista Pakka koostuu.
+ */
 public class Kortti {
     private int arvo;
     private String maa;
