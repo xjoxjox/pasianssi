@@ -41,10 +41,12 @@
                 <version>0.30</version>
                 <configuration>
                     <targetClasses>
-                        <param>pasianssi.pasianssi.*</param>
+                        <param>pasianssi.domain.*</param>
+                        <param>pasianssi.util.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>pasianssi.pasianssi.*</param>
+                        <param>pasianssi.domain.*</param>
+                        <param>pasianssi.util.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

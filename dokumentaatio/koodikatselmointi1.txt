@@ -1,0 +1,9 @@
+30.01.2015 klo 13:30
+
+Tästä koodista onkin vaikea keksiä jotain parannusehdotuksia. Luokat ja paketit olivat hyvin ja selkeästi jaettu. Luokissa ei ollut liikaa koodia ja metodit olivat lyhyitä. Metodit nimetty kuvaavasti. Koodia oli jo paljon. Myös käyttöliittymää oli jo rakennettu, mutta sen koodin en ota kantaa, kun en ole sitä itse vielä aloittanut, enkä oikein muista viime keväältä kuinka se toimii. Pelissä jo mukavasti mukana kaikkea extraa, kuten highscore ja eri kielten valinta. Abstraktien luokkien käyttö myös mahdollistaa laajennukset myöhemmin.
+Testit oli myös hyvin jaettu omiin paketteihin ja luokkiin ja ne menivät läpi. Koodi muutenkin kääntyi ilman virheitä.
+
+Hahmo-luokalle olisi tarpeen jonkinlainen varmistus siitä, ettei hahmoa pysty siirtämään ulos pelialueelta. Ja sitä myöten testit, ettei hyväksy vääriä arvoja.
+Lupaavalta vaikuttava koodi.
+
+xjoxjox
