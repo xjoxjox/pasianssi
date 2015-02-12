@@ -1,9 +1,6 @@
 
 package pasianssi.domain;
 
-import pasianssi.domain.Poyta;
-import pasianssi.domain.Paikka;
-import pasianssi.domain.Kortti;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -46,16 +43,28 @@ public class PoytaTest {
     }
     
     @Test
-    public void palauttaaOikeanArvonJosKorttienValissaOnTyhjiaPaikkoja() {
-        paikka.asetaKortti(new Kortti(1, "hertta"));
+    public void nayttaaValitutPaikatOikein() {
         Paikka paikka2 = new Paikka(3,4);
         Paikka paikka3 = new Paikka(4,4);
-        paikka3.asetaKortti(new Kortti(4, "hertta"));
+        paikka.asetaValituksi();
+        paikka2.asetaValituksi();
+        paikka3.asetaValituksi();
+        poyta.lisaaPaikka(paikka);
+        poyta.lisaaPaikka(paikka2);
+        poyta.lisaaPaikka(paikka3);
+        assertEquals(3, poyta.valitutKortit().size());
+    }
+    @Test
+    public void palauttaaOikeanArvonJosKorttienValissaOnTyhjiaPaikkoja() {
+        paikka.asetaKortti(new Kortti(1, "Hertta"));
+        Paikka paikka2 = new Paikka(3,4);
+        Paikka paikka3 = new Paikka(4,4);
+        paikka3.asetaKortti(new Kortti(4, "Hertta"));
         Paikka paikka4 = new Paikka(1,4);
-        paikka4.asetaKortti(new Kortti(6, "hertta"));
+        paikka4.asetaKortti(new Kortti(6, "Hertta"));
         Paikka paikka5 = new Paikka(2,5);
         Paikka paikka6 = new Paikka(1,2);
-        paikka6.asetaKortti(new Kortti(8, "hertta"));
+        paikka6.asetaKortti(new Kortti(8, "Hertta"));
         poyta.lisaaPaikka(paikka);
         poyta.lisaaPaikka(paikka2);
         poyta.lisaaPaikka(paikka3);
@@ -68,14 +77,14 @@ public class PoytaTest {
     
     @Test
     public void palauttaaOikeanPaikanJossaViimeinenKortti() {
-        paikka.asetaKortti(new Kortti(1, "hertta"));
+        paikka.asetaKortti(new Kortti(1, "Hertta"));
         Paikka paikka2 = new Paikka(3,4);
         Paikka paikka3 = new Paikka(4,4);
-        paikka3.asetaKortti(new Kortti(4, "hertta"));
+        paikka3.asetaKortti(new Kortti(4, "Hertta"));
         Paikka paikka4 = new Paikka(1,4);
-        paikka4.asetaKortti(new Kortti(6, "hertta"));
+        paikka4.asetaKortti(new Kortti(6, "Hertta"));
         Paikka paikka5 = new Paikka(2,5);
-        paikka5.asetaKortti(new Kortti(8, "hertta"));
+        paikka5.asetaKortti(new Kortti(8, "Hertta"));
         Paikka paikka6 = new Paikka(1,2);
         
         poyta.lisaaPaikka(paikka);

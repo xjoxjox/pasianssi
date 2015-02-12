@@ -13,7 +13,7 @@ public class KorttiTest {
     
     @Before
     public void setUp() {
-        kortti = new Kortti(5, "hertta");
+        kortti = new Kortti(5, "Hertta");
     }
     
     @Test
@@ -23,14 +23,14 @@ public class KorttiTest {
     
     @Test
     public void konstruktoriAsettaaKortinMaanOikein() {   
-        assertEquals("hertta", kortti.getMaa());
+        assertEquals("Hertta", kortti.getMaa());
     }
     
     @Test
     public void eiLuoKorttiaVaarillaArvoilla() {
         boolean tapahtuikovirhe = false;
         try {
-            Kortti kortti2 = new Kortti(0, "hertta");
+            Kortti kortti2 = new Kortti(0, "Hertta");
         }
         catch (IllegalArgumentException e) {
             tapahtuikovirhe = true;
@@ -43,7 +43,7 @@ public class KorttiTest {
     public void eiLuoKorttiaVaarillaArvoilla2() {
         boolean tapahtuikovirhe = false;
         try {
-            Kortti kortti2 = new Kortti(14, "hertta");
+            Kortti kortti2 = new Kortti(14, "Hertta");
         }
         catch (IllegalArgumentException e) {
             tapahtuikovirhe = true;

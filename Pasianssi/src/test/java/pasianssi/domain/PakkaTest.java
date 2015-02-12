@@ -17,7 +17,7 @@ public class PakkaTest {
     @Before
     public void setUp() {
         pakka = new Pakka();
-        kortti = new Kortti(1, "hertta");
+        kortti = new Kortti(1, "Hertta");
     }
     
     @Test
@@ -34,9 +34,9 @@ public class PakkaTest {
     
     @Test
     public void sekoittaaPakan() {
-        Kortti kortti2 = new Kortti(2, "ruutu");
-        Kortti kortti3 = new Kortti(7, "ruutu");
-        Kortti kortti4 = new Kortti(9, "risti");
+        Kortti kortti2 = new Kortti(2, "Ruutu");
+        Kortti kortti3 = new Kortti(7, "Ruutu");
+        Kortti kortti4 = new Kortti(9, "Risti");
         pakka.lisaaKortti(kortti);
         pakka.lisaaKortti(kortti2);
         pakka.lisaaKortti(kortti3);
@@ -44,16 +44,16 @@ public class PakkaTest {
         
         pakka.sekoitaPakka();
         boolean sekoitus = true;
-        if (pakka.pakanKortit().get(0).getArvo()!=1 && !pakka.pakanKortit().get(0).getMaa().equals("hertta")) {
+        if (pakka.pakanKortit().get(0).getArvo()!=1 && !pakka.pakanKortit().get(0).getMaa().equals("Hertta")) {
                 sekoitus = false;
         }
-        if (pakka.pakanKortit().get(1).getArvo()!=2 && !pakka.pakanKortit().get(1).getMaa().equals("ruutu")) {
+        if (pakka.pakanKortit().get(1).getArvo()!=2 && !pakka.pakanKortit().get(1).getMaa().equals("Ruutu")) {
                 sekoitus = false;
         }
-        if (pakka.pakanKortit().get(2).getArvo()!=7 && !pakka.pakanKortit().get(2).getMaa().equals("ruutu")) {
+        if (pakka.pakanKortit().get(2).getArvo()!=7 && !pakka.pakanKortit().get(2).getMaa().equals("Ruutu")) {
                 sekoitus = false;
         }
-        if (pakka.pakanKortit().get(3).getArvo()!=9 && !pakka.pakanKortit().get(3).getMaa().equals("risti")) {
+        if (pakka.pakanKortit().get(3).getArvo()!=9 && !pakka.pakanKortit().get(3).getMaa().equals("Risti")) {
                 sekoitus = false;
         }
         
@@ -62,12 +62,12 @@ public class PakkaTest {
     
     @Test
     public void poistaaKortinPakasta() {
-        pakka.lisaaKortti(new Kortti(3, "hertta"));
-        pakka.lisaaKortti(new Kortti(5, "ruutu"));
+        pakka.lisaaKortti(new Kortti(3, "Hertta"));
+        pakka.lisaaKortti(new Kortti(5, "Ruutu"));
         pakka.lisaaKortti(kortti);
-        pakka.lisaaKortti(new Kortti(13, "hertta"));
-        pakka.lisaaKortti(new Kortti(10, "pata"));
-        pakka.lisaaKortti(new Kortti(3, "risti"));
+        pakka.lisaaKortti(new Kortti(13, "Hertta"));
+        pakka.lisaaKortti(new Kortti(10, "Pata"));
+        pakka.lisaaKortti(new Kortti(3, "Risti"));
         pakka.poistaKortti(kortti);       
         
         assertFalse(pakka.pakanKortit().contains(kortti));

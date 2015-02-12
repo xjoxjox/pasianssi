@@ -14,7 +14,7 @@ public class PaikkaTest {
       @Before
     public void setUp() {
         paikka = new Paikka(3, 3);
-        kortti = new Kortti(4, "hertta");
+        kortti = new Kortti(4, "Hertta");
     }
 
     @Test
@@ -49,6 +49,26 @@ public class PaikkaTest {
         paikka.asetaKortti(kortti);
         paikka.tyhjennaPaikka();
         assertTrue(paikka.onkoTyhja());
+    }
+    
+    @Test
+    public void asettaaKortinValituksi() {
+        paikka.asetaValituksi();
+        assertTrue(paikka.getValittu());
+    }
+    
+    @Test
+    public void poistaaKortinValinnan() {
+        paikka.asetaValituksi();
+        paikka.poistaValinta();
+        assertFalse(paikka.getValittu());
+    }
+    
+    @Test
+    public void nayttaaOikeinKortinValinnan() {
+        paikka.asetaValituksi();
+        boolean valinta = paikka.getValittu();
+        assertTrue(valinta);
     }
     
     @Test

@@ -1,5 +1,7 @@
 
 package pasianssi.domain;
+
+
 /**
  * Luokka luo paikat, joista Pöytä koostuu, sekä asettaa ja poistaa Kortit paikasta.
  */
@@ -8,6 +10,7 @@ public class Paikka {
     private int vaakarivi;
     private Kortti kortti;
     private boolean tyhjä;
+    private boolean valittu;
     
     public Paikka(int pystyrivi, int vaakarivi) {
         if (pystyrivi<1 || pystyrivi>5) {
@@ -19,6 +22,7 @@ public class Paikka {
         this.pystyrivi = pystyrivi;
         this.vaakarivi = vaakarivi;
         this.tyhjä = true;
+        this.valittu = false;
     }
     /**
     * Metodi asettaa kortin paikkaan.
@@ -46,6 +50,22 @@ public class Paikka {
     
      public int getVaakarivi() {
         return this.vaakarivi;
+    }
+    
+     public boolean getValittu() {
+         return this.valittu;
+    }
+    /**
+    * Metodi asettaa paikan valituksi.
+    */
+    public void asetaValituksi() {
+        this.valittu = true;
+    }
+    /**
+    * Metodi poistaa paikan valinnan.
+    */
+    public void poistaValinta() {
+        this.valittu = false;
     }
     /**
     * Metodi ottaa kortin pois paikasta.

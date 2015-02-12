@@ -23,14 +23,14 @@ public class ParienTarkastajaTest {
     @Before
     public void setUp() {
         tarkastaja = new ParienTarkastaja();
-        J = new Kortti(11, "hertta");
-        Q = new Kortti(12, "hertta");
-        K = new Kortti(13, "hertta");
-        kaksi = new Kortti(2, "hertta");
-        viisi = new Kortti(5, "hertta");
-        kuusi = new Kortti(6, "hertta");
-        yhdeksan = new Kortti(9, "hertta");
-        kolme = new Kortti(3, "hertta");
+        J = new Kortti(11, "Hertta");
+        Q = new Kortti(12, "Hertta");
+        K = new Kortti(13, "Hertta");
+        kaksi = new Kortti(2, "Hertta");
+        viisi = new Kortti(5, "Hertta");
+        kuusi = new Kortti(6, "Hertta");
+        yhdeksan = new Kortti(9, "Hertta");
+        kolme = new Kortti(3, "Hertta");
     }
 
     @Test

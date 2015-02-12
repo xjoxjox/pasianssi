@@ -33,7 +33,7 @@ public class ParienTarkastaja {
     * Metodi tarkastaa ovatko valitut kortit kuvakortteja.
     * @param kortti1 ensimmäiseksi valittu kortti
     * @param kortti2 toiseksi valittu kortti
-    * @see pasianssi.util.ParienTarkastaja#onkoKuvakortti() 
+    * @see pasianssi.util.ParienTarkastaja#onkoKuvakortti(Kortti) 
     * @return kuvakortteja
     */
     public boolean ovatkoValitutKuvakortteja(Kortti kortti1, Kortti kortti2) {

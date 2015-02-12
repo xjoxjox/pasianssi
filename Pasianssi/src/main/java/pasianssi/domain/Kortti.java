@@ -12,7 +12,7 @@ public class Kortti {
             throw new IllegalArgumentException("Kortin arvon täytyy olla 1-13");
         }
         boolean oikeamaa = false;
-        if (maa.compareTo("hertta")==0 || maa.compareTo("ruutu")==0 || maa.compareTo("risti")==0 || maa.compareTo("pata")==0) {
+        if (maa.compareTo("Hertta")==0 || maa.compareTo("Ruutu")==0 || maa.compareTo("Risti")==0 || maa.compareTo("Pata")==0) {
             oikeamaa = true;
         }
         if (oikeamaa == false) {
@@ -28,5 +28,10 @@ public class Kortti {
     
     public String getMaa() {
         return this.maa;
+    }
+    
+    @Override
+    public String toString() {
+        return Integer.toString(this.arvo) + this.maa;
     }
 }

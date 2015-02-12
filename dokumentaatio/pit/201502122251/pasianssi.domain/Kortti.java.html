@@ -1,0 +1,602 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+</style>
+
+</head>
+<body>
+
+
+<h1>Kortti.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_1'/>
+1
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_1'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_2'/>
+2
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_2'></a>
+</td>
+<td class=''><pre><span  class=''>package pasianssi.domain;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_3'/>
+3
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_3'></a>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_4'/>
+4
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_4'></a>
+</td>
+<td class=''><pre><span  class=''> * Luokka luo kortit, joista Pakka koostuu.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_5'/>
+5
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_5'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_6'/>
+6
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_6'></a>
+</td>
+<td class=''><pre><span  class=''>public class Kortti {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_7'/>
+7
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_7'></a>
+</td>
+<td class=''><pre><span  class=''>    private int arvo;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_8'/>
+8
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_8'></a>
+</td>
+<td class=''><pre><span  class=''>    private String maa;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_9'/>
+9
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_9'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_10'/>
+10
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_10'></a>
+</td>
+<td class='covered'><pre><span  class=''>    public Kortti(int arvo, String maa) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_11'/>
+11
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_11'>4</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (arvo&#60;1 || arvo&#62;13) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_12'/>
+12
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_12'></a>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Kortin arvon t&#195;&#164;ytyy olla 1-13&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_13'/>
+13
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_13'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_14'/>
+14
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_14'></a>
+</td>
+<td class='covered'><pre><span  class=''>        boolean oikeamaa = false;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_15'/>
+15
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_15'>4</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (maa.compareTo(&#34;Hertta&#34;)==0 || maa.compareTo(&#34;Ruutu&#34;)==0 || maa.compareTo(&#34;Risti&#34;)==0 || maa.compareTo(&#34;Pata&#34;)==0) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_16'/>
+16
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_16'></a>
+</td>
+<td class='covered'><pre><span  class=''>            oikeamaa = true;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_17'/>
+17
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_17'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_18'/>
+18
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_18'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (oikeamaa == false) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_19'/>
+19
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_19'></a>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;Kortin maan t&#195;&#164;ytyy olla hertta, ruutu, risti tai pata&#34;);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_20'/>
+20
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_20'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_21'/>
+21
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_21'></a>
+</td>
+<td class='covered'><pre><span  class=''>            this.arvo = arvo;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_22'/>
+22
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_22'></a>
+</td>
+<td class='covered'><pre><span  class=''>            this.maa = maa;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_23'/>
+23
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_23'></a>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_24'/>
+24
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_24'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_25'/>
+25
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_25'></a>
+</td>
+<td class=''><pre><span  class=''>    public int getArvo() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_26'/>
+26
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_26'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this.arvo;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_27'/>
+27
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_27'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_28'/>
+28
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_28'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_29'/>
+29
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_29'></a>
+</td>
+<td class=''><pre><span  class=''>    public String getMaa() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_30'/>
+30
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_30'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this.maa;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_31'/>
+31
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_31'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_32'/>
+32
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_32'></a>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_33'/>
+33
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_33'></a>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_34'/>
+34
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_34'></a>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_35'/>
+35
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_35'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return Integer.toString(this.arvo) + this.maa;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_36'/>
+36
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_36'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_37'/>
+37
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_37'></a>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_11'>11</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_11'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla2(pasianssi.domain.KorttiTest)</p> <p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla2(pasianssi.domain.KorttiTest)</p> <p class='KILLED'>changed conditional boundary : KILLED -> pasianssi.domain.PakkaTest.asettaaKortinPakkaan(pasianssi.domain.PakkaTest)</p> <p class='KILLED'>changed conditional boundary : KILLED -> pasianssi.domain.PakkaTest.luoPakanOikein(pasianssi.domain.PakkaTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_15'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla3(pasianssi.domain.KorttiTest)</p> <p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla3(pasianssi.domain.KorttiTest)</p> <p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla3(pasianssi.domain.KorttiTest)</p> <p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla2(pasianssi.domain.KorttiTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_18'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla2(pasianssi.domain.KorttiTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_26'/> 
+
+<p class='KILLED'>replaced return of integer sized value with (x == 0 ? 1 : 0) : KILLED -> pasianssi.domain.KorttiTest.konstruktoriAsettaaKortinArvonOikein(pasianssi.domain.KorttiTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_30'/> 
+
+<p class='KILLED'>mutated return of Object value for pasianssi/domain/Kortti::getMaa to ( if (x != null) null else throw new RuntimeException ) : KILLED -> pasianssi.domain.KorttiTest.konstruktoriAsettaaKortinMaanOikein(pasianssi.domain.KorttiTest)</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1d01dfa5_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1d01dfa5_35'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for pasianssi/domain/Kortti::toString to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKuvakortitJarjestyksessa5(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja8(pasianssi.util.ParienTarkastajaTest) (16 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja3(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitKuvakortteja2(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.konstruktoriAsettaaPaikanVaakarivinOikein(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.PakkaTest.asettaaOikeanArvoisenKortinPakkaan(pasianssi.domain.PakkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.eiLuoPaikkaaVaarillaArvoilla3(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.util.JakajaTest.siirtaaKortitOikeinTyhjastaPakasta(pasianssi.util.JakajaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.eiLuoPaikkaaVaarillaArvoilla4(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja7(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.util.JakajaTest.jakaaKortitOikeinTyhjaanPoytaan(pasianssi.util.JakajaTest) (0 ms)</li><li>pasianssi.util.JakajaTest.jakaaKortitOikeinPakasta(pasianssi.util.JakajaTest) (16 ms)</li><li>pasianssi.domain.PaikkaTest.eiLuoPaikkaaVaarillaArvoilla2(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.asettaaKortinOikein(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja2(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKuvakortitJarjestyksessa4(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.KorttiTest.konstruktoriAsettaaKortinMaanOikein(pasianssi.domain.KorttiTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKuvakortitJarjestyksessa3(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitKuvakortteja(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.PakkaTest.asettaaKortinPakkaan(pasianssi.domain.PakkaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja6(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.PoytaTest.palauttaaOikeanPaikanJossaViimeinenKortti(pasianssi.domain.PoytaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.asettaaKortinValituksi(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.tyhjentaaPaikanOikein(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.konstruktoriAsettaaPaikanTyhjaksi(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.eiLuoPaikkaaVaarillaArvoilla(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla2(pasianssi.domain.KorttiTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKuvakortitJarjestyksessa(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKuvakortitJarjestyksessa2(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.PoytaTest.palauttaaOikeanArvonJosKorttienValissaOnTyhjiaPaikkoja(pasianssi.domain.PoytaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja5(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla4(pasianssi.domain.KorttiTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja4(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.KorttiTest.konstruktoriAsettaaKortinArvonOikein(pasianssi.domain.KorttiTest) (16 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitKuvakortteja3(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.PakkaTest.poistaaKortinPakasta(pasianssi.domain.PakkaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKuvakortitJarjestyksessa6(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla(pasianssi.domain.KorttiTest) (16 ms)</li><li>pasianssi.domain.PakkaTest.luoPakanOikein(pasianssi.domain.PakkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.konstruktoriAsettaaPaikanPystyrivinOikein(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.util.ParienTarkastajaTest.tarkistaaOikeinOvatkoKortitPareja(pasianssi.util.ParienTarkastajaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.nayttaaOikeinKortinValinnan(pasianssi.domain.PaikkaTest) (0 ms)</li><li>pasianssi.domain.PakkaTest.sekoittaaPakan(pasianssi.domain.PakkaTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.poistaaKortinValinnan(pasianssi.domain.PaikkaTest) (16 ms)</li><li>pasianssi.domain.KorttiTest.eiLuoKorttiaVaarillaArvoilla3(pasianssi.domain.KorttiTest) (0 ms)</li><li>pasianssi.domain.PaikkaTest.asettaaPaikanTaytetyksiKunKorttiLisataan(pasianssi.domain.PaikkaTest) (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 0.30
+
+</body>
+</html>

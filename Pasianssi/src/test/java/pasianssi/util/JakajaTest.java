@@ -1,11 +1,6 @@
 
 package pasianssi.util;
 
-import pasianssi.domain.Poyta;
-import pasianssi.util.Jakaja;
-import pasianssi.domain.Paikka;
-import pasianssi.domain.Kortti;
-import pasianssi.domain.Pakka;
 import org.junit.Before;
 import org.junit.Test;
 import pasianssi.domain.Kortti;
@@ -36,19 +31,19 @@ public class JakajaTest {
         for (int i = 1; i < 4; i++) {
             for (int j = 1; j <= 4; j++) {
                 if (j == 1) {
-                    Kortti kortti = new Kortti(i, "hertta");
+                    Kortti kortti = new Kortti(i, "Hertta");
                     pakka.lisaaKortti(kortti);
                 }
                 if (j == 2) {
-                    Kortti kortti = new Kortti(i, "ruutu");
+                    Kortti kortti = new Kortti(i, "Ruutu");
                     pakka.lisaaKortti(kortti);
                 }
                 if (j == 3) {
-                    Kortti kortti = new Kortti(i, "risti");
+                    Kortti kortti = new Kortti(i, "Risti");
                     pakka.lisaaKortti(kortti);
                 }
                 if (j == 4) {
-                    Kortti kortti = new Kortti(i, "pata");
+                    Kortti kortti = new Kortti(i, "Pata");
                     pakka.lisaaKortti(kortti);
                 }
             }

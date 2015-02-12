@@ -14,7 +14,7 @@ public class Poyta {
     }
     /**
     * Metodi luo paikat pöydälle.
-    * @see pasianssi.domain.Poyta#lisaaPaikka()
+    * @see pasianssi.domain.Poyta#lisaaPaikka(Paikka)
     */
     public void luoPaikat() {
         for (int z = 1; z <= 5; z++) {
@@ -46,13 +46,26 @@ public class Poyta {
         }
         return tyhjat;
     }
+    /**
+    * Metodi palauttaa ArrayListin valituista paikoista.
+    * @return pöydän paikat jotka ovat valittuina
+    */
+    public ArrayList<Paikka> valitutKortit() {
+        ArrayList<Paikka> valitut = new ArrayList<>(3);
+        for (Paikka paikka : this.paikat) {
+            if (paikka.getValittu()) {
+                valitut.add(paikka);
+            }
+        }
+        return valitut;
+    }
     
     public ArrayList<Paikka> getPaikat() {
         return this.paikat;
     }
     /**
     * Metodi kertoo onko korttien välissä tyhjiä paikkoja.
-    * @see pasianssi.pasianssi.Paikka#onkoTyhja()  
+    * @see pasianssi.domain.Paikka#onkoTyhja()  
     * @return tyhjät paikat korttien välissä
     */
     public boolean onkoKorttienValissaTyhjia() {
@@ -69,7 +82,7 @@ public class Poyta {
     }
     /**
     * Metodi palauttaa viimeisen paikan, jossa on kortti.
-    * @see pasianssi.pasianssi.Paikka#onkoTyhja() 
+    * @see pasianssi.domain.Paikka#onkoTyhja() 
     * @return viimeinen paikka jossa kortti
     */
     public Paikka viimeinenPaikkaJossaKortti() {
