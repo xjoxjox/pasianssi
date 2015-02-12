@@ -9,3 +9,7 @@ Tuntikirjanpito
 27.01.2015  2h  ParienTarkastaja-luokan ja -testiluokan koodausta, Javadocia
 
 04.02.2015  2h  RivienTarkastaja-luokan ja -testiluokan koodausta, virheentarkistuksen lisäystä luokkiin+testit niihin, PIT
+
+11.02.2015  1h  Käyttöliittymän koodausta
+
+12.02.2015  2h  Käyttöliittymän koodausta
