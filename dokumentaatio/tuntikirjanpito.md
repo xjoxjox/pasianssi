@@ -12,4 +12,4 @@ Tuntikirjanpito
 
 11.02.2015  1h  Käyttöliittymän koodausta
 
-12.02.2015  4h  Käyttöliittymän koodausta, Paikka luokan modausta ja siihen testejä lisää, PIT
+12.02.2015  4h  Käyttöliittymän koodausta, Paikka luokan modausta ja siihen testejä lisää, luokka+sekvenssikaavio
