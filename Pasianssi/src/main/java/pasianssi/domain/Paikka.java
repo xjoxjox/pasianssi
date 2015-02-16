@@ -1,6 +1,12 @@
 
 package pasianssi.domain;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 
 /**
  * Luokka luo paikat, joista Pöytä koostuu, sekä asettaa ja poistaa Kortit paikasta.
@@ -73,5 +79,47 @@ public class Paikka {
     public void tyhjennaPaikka() {
         this.kortti = null;
         this.tyhjä = true;
+    }
+    /**
+    * Metodi hakee oikean kuvan paikalle, jos siinä on kortti.
+    * @throws java.io.IOException
+    * @see pasianssi.domain.Paikka#kuvaNegaatio(BufferedImage)
+    * @return Kortin kuva
+    */
+    public ImageIcon haeKuva() throws IOException {
+        String tiedosto = getKortti().toString();
+        ImageIcon kuva = null;
+        if (onkoTyhja()) return kuva;
+        else if (!getValittu()) {
+            URL kuvaURL = getClass().getResource("2Hertta.jpg");
+            BufferedImage img = ImageIO.read(kuvaURL);
+            kuva = new ImageIcon(img);
+        }
+        else {
+            URL kuvaURL = getClass().getResource(tiedosto + ".jpg");
+            BufferedImage img = ImageIO.read(kuvaURL);
+            kuvaNegaatio(img);
+            kuva = new ImageIcon(img);
+        }
+        return kuva;
+    }
+    /**
+    * Metodi tuottaa annetusta kuvasta kuvan jossa on värit negaationa.
+    * @param kuva valitun Paikan kuva.
+    * @return kuva negaationa
+    */
+    private BufferedImage kuvaNegaatio(BufferedImage kuva) {
+        int leveys = kuva.getWidth();
+        int korkeus = kuva.getHeight();
+        for (int x = 0; x < leveys; x++) {
+            for (int y = 0; y < korkeus; y++) {
+            int rGB = kuva.getRGB(x, y);
+            int r = Math.abs(((rGB >>> 16) & 0xff) - 255);
+                int g = Math.abs(((rGB >>> 8) & 0xff) - 255);
+                int b = Math.abs((rGB & 0xff) - 255);
+                kuva.setRGB(x, y, (r << 16) | (g << 8) | b);
+            }
+        }        
+        return kuva;
     }
 }

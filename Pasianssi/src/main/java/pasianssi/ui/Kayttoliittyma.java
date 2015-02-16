@@ -51,15 +51,26 @@ public class Kayttoliittyma implements Runnable {
         Poyta poyta = new Poyta();
         poyta.luoPaikat();
         Jakaja jakaja = new Jakaja(pakka, poyta);
+        jakaja.jaaKortit();
         JPanel kortit = new JPanel(new FlowLayout());
         kortit.setPreferredSize(new Dimension(700,1000));
         kortit.setBackground(Color.GREEN);
         for (int i = 0; i < poyta.getPaikat().size(); i++) {
-            PaikkaLabel pl = new PaikkaLabel(poyta.getPaikat().get(i));
-            pl.setPreferredSize(pl.getPreferredSize());
-            pl.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
-            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, frame));
-            kortit.add(pl);
+            if (!poyta.getPaikat().get(i).onkoTyhja()) {
+                ImageIcon kuva = poyta.getPaikat().get(i).haeKuva();
+                PaikkaLabel pl = new PaikkaLabel(poyta.getPaikat().get(i), kuva);
+                pl.setPreferredSize(pl.getPreferredSize());
+                pl.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+                pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, frame));
+                kortit.add(pl);
+            }
+            else {
+                PaikkaLabel pl = new PaikkaLabel(poyta.getPaikat().get(i), null);
+                pl.setPreferredSize(pl.getPreferredSize());
+                pl.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
+                pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, frame));
+                kortit.add(pl);
+            }
         }
         JButton uusipeli = new JButton("Uusi peli");
         JLabel pakkaLabel = new JLabel();
