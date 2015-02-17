@@ -1,6 +1,8 @@
 
 package pasianssi.domain;
 
+import java.awt.Image;
+import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -121,5 +123,16 @@ public class PaikkaTest {
         }
 
         assertTrue(tapahtuikovirhe);
+    }
+    
+    @Test
+    public void hakeeKuvan() throws IOException {
+        boolean saikokuvan = false;
+        paikka.asetaKortti(kortti);
+        Image kuva = paikka.haeKuva();
+        if (kuva!=null) {
+            saikokuvan = true;
+        }
+        assertTrue(saikokuvan);
     }
 }

@@ -66,6 +66,6 @@
   <testcase classname="pasianssi.domain.PakkaTest" name="luoPakanOikein" time="0"/>
   <testcase classname="pasianssi.domain.PakkaTest" name="sekoittaaPakan" time="0"/>
   <testcase classname="pasianssi.domain.PakkaTest" name="asettaaOikeanArvoisenKortinPakkaan" time="0"/>
-  <testcase classname="pasianssi.domain.PakkaTest" name="poistaaKortinPakasta" time="0"/>
   <testcase classname="pasianssi.domain.PakkaTest" name="asettaaKortinPakkaan" time="0"/>
+  <testcase classname="pasianssi.domain.PakkaTest" name="poistaaKortinPakasta" time="0"/>
 </testsuite>

@@ -1,6 +1,8 @@
 
 package pasianssi.domain;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
@@ -86,20 +88,21 @@ public class Paikka {
     * @see pasianssi.domain.Paikka#kuvaNegaatio(BufferedImage)
     * @return Kortin kuva
     */
-    public ImageIcon haeKuva() throws IOException {
-        String tiedosto = getKortti().toString();
-        ImageIcon kuva = null;
+    public Image haeKuva() throws IOException {
+        Image kuva = null;
         if (onkoTyhja()) return kuva;
         else if (!getValittu()) {
-            URL kuvaURL = getClass().getResource("2Hertta.jpg");
+            String tiedosto = getKortti().toString();
+            URL kuvaURL = getClass().getResource("/" +tiedosto + ".jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
-            kuva = new ImageIcon(img);
+            kuva = img;
         }
         else {
-            URL kuvaURL = getClass().getResource(tiedosto + ".jpg");
+            String tiedosto = getKortti().toString();
+            URL kuvaURL = getClass().getResource("/" + tiedosto + ".jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
             kuvaNegaatio(img);
-            kuva = new ImageIcon(img);
+            kuva = img;
         }
         return kuva;
     }

@@ -28,7 +28,7 @@ public class RivienTarkastajaTest {
         d = new Paikka(2, 4);
         e = new Paikka(2, 3);
         f = new Paikka(4, 2);
-        g = new Paikka(5, 4);
+        g = new Paikka(3, 4);
     }
     
     @Test
@@ -68,6 +68,11 @@ public class RivienTarkastajaTest {
     
     @Test
     public void tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla4() {
+        assertTrue(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(a, d, g));
+    }
+    
+    @Test
+    public void tarkistaaOikeinOvatkoKuvakortitVierekkain() {
         assertTrue(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(a, d, g));
     }
 }
