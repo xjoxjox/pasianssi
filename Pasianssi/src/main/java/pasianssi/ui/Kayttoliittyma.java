@@ -82,47 +82,74 @@ public class Kayttoliittyma implements Runnable {
         rt = new RivienTarkastaja();
         kortit = new JPanel(new FlowLayout());
         kortit.setPreferredSize(new Dimension(700,1000));
-        kortit.setBackground(Color.GREEN);
+        kortit.setBackground(new Color(0,100,0));
         valitut = new ArrayList<>();
         paikat = new ArrayList<>();
         tt = new TilanteenTarkastaja(paikat);
+        JButton vihje = new JButton("Vihje");
+        VihjeNapinKuuntelija vnk = new VihjeNapinKuuntelija(tt);
+        vihje.addActionListener(vnk);
         for (int i = 0; i < poyta.getPaikat().size(); i++) {
             PaikkaLabel pl = new PaikkaLabel(poyta.getPaikat().get(i));
             paikat.add(pl);
             pl.setPreferredSize(pl.getPreferredSize());
-            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, pt, rt, tt, pakka, valitut));
+            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, pt, rt, tt, pakka, valitut, this, vnk));
             kortit.add(pl);
             pl.repaint();
         }
         pakkaLabel = new JLabel();
         if (!pakka.onkoTyhja()) {
-            URL kuvaURL = getClass().getResource("/tausta.jpg");
+            URL kuvaURL = getClass().getResource("/taustaR.jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
             pakkaLabel.setIcon(new ImageIcon(img));
             pakkaLabel.repaint();
         }
         JButton uusipeli = new JButton("Uusi peli");
+        JButton ohje = new JButton("Ohje");
         UusiPeliNapinkuuntelija upnk = new UusiPeliNapinkuuntelija(this);
+        OhjeNapinKuuntelija onk = new OhjeNapinKuuntelija(vnk);
         uusipeli.addActionListener(upnk);
-        pakkaLabel.addMouseListener(new PakanHiirenKuuntelija(jakaja, pakkaLabel, tt, pakka, poyta, paikat));
+        ohje.addActionListener(onk);
+        JLabel korttienMaara = new JLabel("Korttien maara pakassa: " + pakka.pakanKortit().size());
+        pakkaLabel.addMouseListener(new PakanHiirenKuuntelija(jakaja, pakkaLabel, tt, pakka, poyta, paikat, this, vnk, korttienMaara));
         pakkaLabel.setPreferredSize(new Dimension(120,185));
-        pakkaLabel.setBackground(Color.DARK_GRAY);
         layout.putConstraint(SpringLayout.EAST, pakkaLabel,
                              -100,
                              SpringLayout.EAST, con);
         layout.putConstraint(SpringLayout.NORTH, pakkaLabel,
                              5,
                              SpringLayout.NORTH, con);
+        layout.putConstraint(SpringLayout.NORTH, korttienMaara,
+                             5,
+                             SpringLayout.SOUTH, pakkaLabel);
+        layout.putConstraint(SpringLayout.EAST, korttienMaara,
+                             -85,
+                             SpringLayout.EAST, con);
         layout.putConstraint(SpringLayout.EAST, uusipeli,
                              -115,
                              SpringLayout.EAST, con);
         layout.putConstraint(SpringLayout.NORTH, uusipeli,
                              50,
                              SpringLayout.SOUTH, pakkaLabel);
+        layout.putConstraint(SpringLayout.NORTH, vihje,
+                             20,
+                             SpringLayout.SOUTH, uusipeli);
+        layout.putConstraint(SpringLayout.EAST, vihje,
+                             -125,
+                             SpringLayout.EAST, con);
+        layout.putConstraint(SpringLayout.NORTH, ohje,
+                             20,
+                             SpringLayout.SOUTH, vihje);
+        layout.putConstraint(SpringLayout.EAST, ohje,
+                             -125,
+                             SpringLayout.EAST, con);
         con.add(pakkaLabel);
         con.add(kortit);
         con.add(uusipeli);
-        con.setBackground(Color.GREEN);
+        con.add(vihje);
+        con.add(ohje);
+        con.add(korttienMaara);
+        con.setBackground(new Color(0,100,0));
     }
 
     private ImageIcon createImageIcon(String cUsersxerof_000Picturestmspictures) {

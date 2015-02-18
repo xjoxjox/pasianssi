@@ -87,34 +87,4 @@ public class ParienTarkastajaTest {
     public void tarkistaaOikeinOvatkoKortitPareja8() {
         assertFalse(tarkastaja.ovatkoValitutKortitPari(kaksi, kaksi));
     }
-    
-    @Test
-    public void tarkistaaOikeinOvatkoKuvakortitJarjestyksessa() {
-        assertTrue(tarkastaja.ovatkoValitutKuvakorttejaJarjestyksessa(J, K, Q));
-    }
-    
-    @Test
-    public void tarkistaaOikeinOvatkoKuvakortitJarjestyksessa2() {
-        assertTrue(tarkastaja.ovatkoValitutKuvakorttejaJarjestyksessa(K, J, Q));
-    }
-    
-    @Test
-    public void tarkistaaOikeinOvatkoKuvakortitJarjestyksessa3() {
-        assertFalse(tarkastaja.ovatkoValitutKuvakorttejaJarjestyksessa(J, Q, K));
-    }
-    
-    @Test
-    public void tarkistaaOikeinOvatkoKuvakortitJarjestyksessa4() {
-        assertFalse(tarkastaja.ovatkoValitutKuvakorttejaJarjestyksessa(Q, J, K));
-    }
-    
-    @Test
-    public void tarkistaaOikeinOvatkoKuvakortitJarjestyksessa5() {
-        assertFalse(tarkastaja.ovatkoValitutKuvakorttejaJarjestyksessa(J, viisi, Q));
-    }
-    
-    @Test
-    public void tarkistaaOikeinOvatkoKuvakortitJarjestyksessa6() {
-        assertFalse(tarkastaja.ovatkoValitutKuvakorttejaJarjestyksessa(viisi, J, Q));
-    }
 }

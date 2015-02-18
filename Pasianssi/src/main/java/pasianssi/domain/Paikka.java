@@ -84,7 +84,7 @@ public class Paikka {
     }
     /**
     * Metodi hakee oikean kuvan paikalle, jos siinä on kortti.
-    * @throws java.io.IOException
+    * @throws java.io.IOException jos kuvaa ei löydy
     * @see pasianssi.domain.Paikka#kuvaNegaatio(BufferedImage)
     * @return Kortin kuva
     */
@@ -93,13 +93,13 @@ public class Paikka {
         if (onkoTyhja()) return kuva;
         else if (!getValittu()) {
             String tiedosto = getKortti().toString();
-            URL kuvaURL = getClass().getResource("/" +tiedosto + ".jpg");
+            URL kuvaURL = getClass().getResource("/" +tiedosto + "R.jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
             kuva = img;
         }
         else {
             String tiedosto = getKortti().toString();
-            URL kuvaURL = getClass().getResource("/" + tiedosto + ".jpg");
+            URL kuvaURL = getClass().getResource("/" + tiedosto + "R.jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
             kuvaNegaatio(img);
             kuva = img;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="17" failures="0" name="pasianssi.util.ParienTarkastajaTest" time="0.016" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="pasianssi.util.ParienTarkastajaTest" time="0.015" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin"/>
@@ -63,21 +63,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitKuvakortteja3" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja4" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja5" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitJarjestyksessa" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitJarjestyksessa5" time="0"/>
   <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitJarjestyksessa6" time="0"/>
   <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja8" time="0"/>
+  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja2" time="0"/>
+  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitKuvakortteja3" time="0"/>
   <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitKuvakortteja" time="0"/>
   <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitKuvakortteja2" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja2" time="0"/>
+  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja4" time="0"/>
+  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja5" time="0"/>
   <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja3" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitJarjestyksessa4" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja6" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitJarjestyksessa3" time="0"/>
   <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja7" time="0"/>
-  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitJarjestyksessa2" time="0"/>
+  <testcase classname="pasianssi.util.ParienTarkastajaTest" name="tarkistaaOikeinOvatkoKortitPareja6" time="0"/>
 </testsuite>

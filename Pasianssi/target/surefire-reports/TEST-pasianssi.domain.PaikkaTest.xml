@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="pasianssi.domain.PaikkaTest" time="0.219" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="pasianssi.domain.PaikkaTest" time="0.187" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin"/>
@@ -63,18 +63,18 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="hakeeKuvan" time="0.219"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="asettaaPaikanTaytetyksiKunKorttiLisataan" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="konstruktoriAsettaaPaikanPystyrivinOikein" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="konstruktoriAsettaaPaikanVaakarivinOikein" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="hakeeKuvan" time="0.172"/>
   <testcase classname="pasianssi.domain.PaikkaTest" name="konstruktoriAsettaaPaikanTyhjaksi" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="tyhjentaaPaikanOikein" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="asettaaKortinOikein" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla4" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla2" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="nayttaaOikeinKortinValinnan" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="poistaaKortinValinnan" time="0"/>
-  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla3" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="konstruktoriAsettaaPaikanPystyrivinOikein" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="asettaaPaikanTaytetyksiKunKorttiLisataan" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="konstruktoriAsettaaPaikanVaakarivinOikein" time="0"/>
   <testcase classname="pasianssi.domain.PaikkaTest" name="asettaaKortinValituksi" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="asettaaKortinOikein" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla3" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="nayttaaOikeinKortinValinnan" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla4" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="poistaaKortinValinnan" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla2" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="eiLuoPaikkaaVaarillaArvoilla" time="0"/>
+  <testcase classname="pasianssi.domain.PaikkaTest" name="tyhjentaaPaikanOikein" time="0"/>
 </testsuite>

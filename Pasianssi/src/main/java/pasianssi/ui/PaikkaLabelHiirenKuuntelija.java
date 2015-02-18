@@ -4,7 +4,10 @@ package pasianssi.ui;
 import pasianssi.domain.Poyta;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import pasianssi.domain.Pakka;
@@ -20,9 +23,11 @@ public class PaikkaLabelHiirenKuuntelija extends JFrame implements MouseListener
     private RivienTarkastaja rt;
     private TilanteenTarkastaja tt;
     private ArrayList<PaikkaLabel> valitut;
+    private Kayttoliittyma kl;
+    private VihjeNapinKuuntelija vnk;
     
     public PaikkaLabelHiirenKuuntelija(Poyta poyta, PaikkaLabel label, ParienTarkastaja pt, RivienTarkastaja rt, TilanteenTarkastaja tt, 
-            Pakka pakka, ArrayList<PaikkaLabel> valitut) {
+            Pakka pakka, ArrayList<PaikkaLabel> valitut, Kayttoliittyma kl, VihjeNapinKuuntelija vnk) {
         this.valitut = valitut;
         this.poyta = poyta;
         this.pakka = pakka;
@@ -30,10 +35,30 @@ public class PaikkaLabelHiirenKuuntelija extends JFrame implements MouseListener
         this.pt = pt;
         this.rt = rt;
         this.tt = tt;
+        this.kl = kl;
+        this.vnk = vnk;
     }
     
     @Override
     public void mouseClicked(MouseEvent e) {
+        if (this.vnk.onkoPaalla()) {
+            if (this.vnk.getLista().size()==2) {
+                this.vnk.getLista().get(0).getPaikka().poistaValinta();
+                this.vnk.getLista().get(1).getPaikka().poistaValinta();
+                this.vnk.getLista().get(0).repaint();
+                this.vnk.getLista().get(1).repaint();
+                this.vnk.poisPaalta();
+            }
+            else {
+                this.vnk.getLista().get(0).getPaikka().poistaValinta();
+                this.vnk.getLista().get(1).getPaikka().poistaValinta();
+                this.vnk.getLista().get(2).getPaikka().poistaValinta();
+                this.vnk.getLista().get(0).repaint();
+                this.vnk.getLista().get(1).repaint();
+                this.vnk.getLista().get(2).repaint();
+                this.vnk.poisPaalta();
+            }
+        }
         if (label.getPaikka().onkoTyhja()) {
         }
         else if (valitut.isEmpty()) {
@@ -50,10 +75,18 @@ public class PaikkaLabelHiirenKuuntelija extends JFrame implements MouseListener
                     valitut.get(0).repaint();
                     valitut.clear();
                     tt.lisaaParit();
-                    tt.lisaaKuvat();
-                    if (!poyta.onkoKorttienValissaTyhjia() && tt.haeKuvat().isEmpty() && tt.haeParit().isEmpty()) {
-                        System.out.println("loppu");
-                        JOptionPane.showMessageDialog(null, "Ei enää poistettavia kortteja");
+                    if (!poyta.onkoKorttienValissaTyhjia() && tt.haeParit().isEmpty()) {
+                        int valinta = JOptionPane.showConfirmDialog(null, "Ei enää poistettavia kortteja\n Aloitetaanko uusi peli?");
+                        if (valinta==JOptionPane.YES_OPTION) {
+                            try {
+                                kl.reset(kl.getFrame().getContentPane());
+                            } catch (IOException ex) {
+                                Logger.getLogger(PaikkaLabelHiirenKuuntelija.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                    if (poyta.getTyhjat().size()==25 && pakka.onkoTyhja()) {
+                        JOptionPane.showMessageDialog(null, "Läpi meni!");
                     }
                 }
                 else {
@@ -75,9 +108,7 @@ public class PaikkaLabelHiirenKuuntelija extends JFrame implements MouseListener
             }
         }
         else {
-            if (pt.ovatkoValitutKuvakorttejaJarjestyksessa(valitut.get(0).getPaikka().getKortti(), label.getPaikka().getKortti(), valitut.get(1).getPaikka().getKortti()) &&
-                        rt.onkoParinPaikatSamallaRivilla(label.getPaikka(), valitut.get(0).getPaikka()) && 
-                            rt.onkoKuvakortitVierekkäin(label.getPaikka(), valitut.get(0).getPaikka(), valitut.get(1).getPaikka())) {
+            if (rt.onkoKuvakortitVierekkäin(label.getPaikka(), valitut.get(0).getPaikka(), valitut.get(1).getPaikka())) {
                     label.getPaikka().tyhjennaPaikka();
                     valitut.get(0).getPaikka().tyhjennaPaikka();
                     valitut.get(0).getPaikka().poistaValinta();
@@ -87,10 +118,18 @@ public class PaikkaLabelHiirenKuuntelija extends JFrame implements MouseListener
                     valitut.get(1).repaint();
                     valitut.clear();
                     tt.lisaaParit();
-                    tt.lisaaKuvat();
-                    if (!poyta.onkoKorttienValissaTyhjia() && tt.haeKuvat().isEmpty() && tt.haeParit().isEmpty()) {
-                        System.out.println("loppu");
-                        JOptionPane.showMessageDialog(null, "Ei enää poistettavia kortteja");
+                    if (!poyta.onkoKorttienValissaTyhjia() && tt.haeParit().isEmpty()) {
+                        int valinta = JOptionPane.showConfirmDialog(null, "Ei enää poistettavia kortteja\n Aloitetaanko uusi peli?");
+                        if (valinta==JOptionPane.YES_OPTION) {
+                            try {
+                                kl.reset(kl.getFrame().getContentPane());
+                            } catch (IOException ex) {
+                                Logger.getLogger(PaikkaLabelHiirenKuuntelija.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+                    if (poyta.getTyhjat().size()==25 && pakka.onkoTyhja()) {
+                        JOptionPane.showMessageDialog(null, "Läpi meni!");
                     }
                 }
                 else {

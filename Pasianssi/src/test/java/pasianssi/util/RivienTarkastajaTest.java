@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.junit.Before;
 import pasianssi.domain.Paikka;
 import static org.junit.Assert.*;
+import pasianssi.domain.Kortti;
 
 public class RivienTarkastajaTest {
     private RivienTarkastaja tarkastaja;
@@ -15,6 +16,10 @@ public class RivienTarkastajaTest {
     private Paikka e;
     private Paikka f;
     private Paikka g;
+    private Kortti Q;
+    private Kortti K;
+    private Kortti J;
+    private Kortti Viisi;
 
     public RivienTarkastajaTest() {
     }
@@ -29,6 +34,10 @@ public class RivienTarkastajaTest {
         e = new Paikka(2, 3);
         f = new Paikka(4, 2);
         g = new Paikka(3, 4);
+        Q = new Kortti(12, "Hertta");
+        K = new Kortti(13, "Hertta");
+        J = new Kortti(11, "Hertta");
+        Viisi = new Kortti(5, "Hertta");
     }
     
     @Test
@@ -52,27 +61,42 @@ public class RivienTarkastajaTest {
     }
     
     @Test
-    public void tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla() {
-        assertTrue(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(c, d, e));
+    public void tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla() {
+        a.asetaKortti(J);
+        d.asetaKortti(Q);
+        g.asetaKortti(K);
+        assertTrue(tarkastaja.onkoKuvakortitVierekkäin(a, d, g));
     }
     
     @Test
-    public void tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla2() {
-        assertFalse(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(c, d, b));
+    public void tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla2() {
+        a.asetaKortti(Q);
+        d.asetaKortti(J);
+        g.asetaKortti(K);
+        assertFalse(tarkastaja.onkoKuvakortitVierekkäin(a, d, g));
     }
     
     @Test
-    public void tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla3() {
-        assertFalse(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(f, g, a));
+    public void tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla3() {
+        f.asetaKortti(J);
+        g.asetaKortti(Q);
+        a.asetaKortti(K);
+        assertFalse(tarkastaja.onkoKuvakortitVierekkäin(f, g, a));
     }
     
     @Test
-    public void tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla4() {
-        assertTrue(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(a, d, g));
+    public void tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla4() {
+        e.asetaKortti(K);
+        d.asetaKortti(Q);
+        c.asetaKortti(J);
+        assertTrue(tarkastaja.onkoKuvakortitVierekkäin(d, c, e));
     }
     
     @Test
-    public void tarkistaaOikeinOvatkoKuvakortitVierekkain() {
-        assertTrue(tarkastaja.onkoKuvakorttienPaikatSamallaRivilla(a, d, g));
+    public void tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla5() {
+        a.asetaKortti(K);
+        d.asetaKortti(Q);
+        g.asetaKortti(Viisi);
+        assertFalse(tarkastaja.onkoKuvakortitVierekkäin(a, d, g));
     }
 }

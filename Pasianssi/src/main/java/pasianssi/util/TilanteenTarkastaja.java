@@ -8,7 +8,6 @@ import pasianssi.ui.PaikkaLabel;
 public class TilanteenTarkastaja {
     private ArrayList<PaikkaLabel> paikat;
     private HashSet<PaikkaLabel[]> parit;
-    private HashSet<PaikkaLabel[]> kuvat;
     
     public TilanteenTarkastaja(ArrayList<PaikkaLabel> paikat) {
         this.paikat = paikat;
@@ -38,10 +37,10 @@ public class TilanteenTarkastaja {
                 }
             }
         }
+        lisaaKuvat(this.parit);
     }
     
-    public void lisaaKuvat() {
-        this.kuvat = new HashSet<>();
+    public void lisaaKuvat(HashSet<PaikkaLabel[]> parit) {
         for (PaikkaLabel paikka:paikat) {
             if (!paikka.getPaikka().onkoTyhja()) {
                 if (paikka.getPaikka().getKortti().getArvo()==11) {
@@ -56,7 +55,7 @@ public class TilanteenTarkastaja {
                                                     if (paikka2.getPaikka().getPystyrivi()==paikka3.getPaikka().getPystyrivi()) {
                                                         if (Math.abs(paikka2.getPaikka().getVaakarivi()-paikka3.getPaikka().getVaakarivi())==1) {
                                                             PaikkaLabel[] kuva = {paikka,paikka2,paikka3};
-                                                            this.kuvat.add(kuva);
+                                                            this.parit.add(kuva);
                                                         }
                                                     }
                                                 }
@@ -72,7 +71,7 @@ public class TilanteenTarkastaja {
                                                     if (paikka2.getPaikka().getVaakarivi()==paikka3.getPaikka().getVaakarivi()) {
                                                         if (Math.abs(paikka2.getPaikka().getPystyrivi()-paikka3.getPaikka().getPystyrivi())==1) {
                                                             PaikkaLabel[] kuva = {paikka,paikka2,paikka3};
-                                                            this.kuvat.add(kuva);
+                                                            this.parit.add(kuva);
                                                         }
                                                     }
                                                 }
@@ -90,9 +89,5 @@ public class TilanteenTarkastaja {
     
     public HashSet<PaikkaLabel[]> haeParit() {
         return this.parit;
-    }
-    
-    public HashSet<PaikkaLabel[]> haeKuvat() {
-        return this.kuvat;
     }
 }

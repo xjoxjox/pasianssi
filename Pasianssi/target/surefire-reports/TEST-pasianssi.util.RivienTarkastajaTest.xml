@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="pasianssi.util.RivienTarkastajaTest" time="0.015" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="pasianssi.util.RivienTarkastajaTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_25\jre\bin"/>
@@ -63,13 +63,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla4" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla3" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakorttienPaikatSamallaRivilla2" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla3" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla2" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla4" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla5" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla2" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla4" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkain" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla3" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla4" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla" time="0"/>
 </testsuite>

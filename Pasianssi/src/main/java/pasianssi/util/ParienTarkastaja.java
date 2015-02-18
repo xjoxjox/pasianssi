@@ -59,18 +59,4 @@ public class ParienTarkastaja {
         }
         return false;
     }
-    /**
-    * Metodi tarkastaa ovatko valitut kuvakortit järjestyksessä.
-    * @param kortti1 ensimmäiseksi valittu kortti
-    * @param kortti2 toiseksi valittu kortti
-    * @param kortti3 kolmanneksi valittu kortti
-    * @see pasianssi.domain.Kortti#getArvo()
-    * @return kuvakortit järjestyksessä
-    */
-    public boolean ovatkoValitutKuvakorttejaJarjestyksessa(Kortti kortti1, Kortti kortti2, Kortti kortti3) {
-        if (kortti3.getArvo()==12) {
-            return (kortti1.getArvo()==11 && kortti2.getArvo()==13) || (kortti2.getArvo()==11 && kortti1.getArvo()==13);
-        }
-        return false;
-    }
 }
