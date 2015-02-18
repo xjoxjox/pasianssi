@@ -16,4 +16,6 @@ Tuntikirjanpito
 
 16.02.2015  7h  Käyttöliittymän koodausta
 
-17.02.2015  5h  Viimeistelyä ja lisätoiminnallisuuksien lisäystä
+17.02.2015  7h  Viimeistelyä ja lisätoiminnallisuuksien lisäystä
+
+18.02.2015  3h  Lisätoiminnallisuuksia
