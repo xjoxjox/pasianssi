@@ -63,13 +63,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla3" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla2" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla3" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla4" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla5" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoKuvakortitVierekkainJaSamallaRivilla5" time="0"/>
+  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla2" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla3" time="0"/>
   <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla4" time="0"/>
-  <testcase classname="pasianssi.util.RivienTarkastajaTest" name="tarkistaaOikeinOvatkoPaikatSamallaRivilla" time="0"/>
 </testsuite>

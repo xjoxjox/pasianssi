@@ -63,11 +63,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="pasianssi.domain.PoytaTest" name="palauttaaOikeanArvonJosKorttienValissaOnTyhjiaPaikkoja" time="0"/>
   <testcase classname="pasianssi.domain.PoytaTest" name="luoPaikatOikein" time="0"/>
+  <testcase classname="pasianssi.domain.PoytaTest" name="palauttaaOikeanArvonJosKorttienValissaOnTyhjiaPaikkoja" time="0"/>
   <testcase classname="pasianssi.domain.PoytaTest" name="palauttaaOikeanPaikanJossaViimeinenKortti" time="0"/>
-  <testcase classname="pasianssi.domain.PoytaTest" name="nayttaaPaikatOikein" time="0"/>
-  <testcase classname="pasianssi.domain.PoytaTest" name="asettaaPaikanPoydalle" time="0"/>
   <testcase classname="pasianssi.domain.PoytaTest" name="nayttaaValitutPaikatOikein" time="0"/>
+  <testcase classname="pasianssi.domain.PoytaTest" name="asettaaPaikanPoydalle" time="0"/>
+  <testcase classname="pasianssi.domain.PoytaTest" name="nayttaaPaikatOikein" time="0"/>
   <testcase classname="pasianssi.domain.PoytaTest" name="nayttaaTyhjatPaikatOikein" time="0"/>
 </testsuite>

@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import pasianssi.domain.Pakka;
 import pasianssi.domain.Poyta;
 import pasianssi.util.Jakaja;
@@ -29,9 +30,10 @@ public class PakanHiirenKuuntelija extends JFrame implements MouseListener {
     private Kayttoliittyma kl;
     private VihjeNapinKuuntelija vnk;
     private JLabel korttienMaara;
+    private Timer aika;
     
     public PakanHiirenKuuntelija (Jakaja jakaja, JLabel pakkaLabel, TilanteenTarkastaja tt, Pakka pakka, Poyta poyta,
-            ArrayList<PaikkaLabel> paikat, Kayttoliittyma kl, VihjeNapinKuuntelija vnk, JLabel korttienMaara) {
+            ArrayList<PaikkaLabel> paikat, Kayttoliittyma kl, VihjeNapinKuuntelija vnk, JLabel korttienMaara, Timer aika) {
         this.jakaja = jakaja;
         this.paikat = paikat;
         this.pakkaLabel = pakkaLabel;
@@ -42,6 +44,7 @@ public class PakanHiirenKuuntelija extends JFrame implements MouseListener {
         this.kl = kl;
         this.vnk = vnk;
         this.korttienMaara = korttienMaara;
+        this.aika = aika;
     }
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -69,6 +72,7 @@ public class PakanHiirenKuuntelija extends JFrame implements MouseListener {
         }
         tt.lisaaParit();
         if (!poyta.onkoKorttienValissaTyhjia() && tt.haeParit().isEmpty()) {
+            aika.stop();
             int valinta = JOptionPane.showConfirmDialog(null, "Ei enää poistettavia kortteja\n Aloitetaanko uusi peli?");
                 if (valinta==JOptionPane.YES_OPTION) {
                 try {

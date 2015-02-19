@@ -20,6 +20,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+import javax.swing.Timer;
 import javax.swing.WindowConstants;
 import pasianssi.util.Jakaja;
 import pasianssi.util.ParienTarkastaja;
@@ -89,11 +90,14 @@ public class Kayttoliittyma implements Runnable {
         JButton vihje = new JButton("Vihje");
         VihjeNapinKuuntelija vnk = new VihjeNapinKuuntelija(tt);
         vihje.addActionListener(vnk);
+        JLabel aika = new JLabel("00:00:00");
+        TimerKuuntelija tk = new TimerKuuntelija(aika);
+        Timer ajanottaja = new Timer(1000, tk);
         for (int i = 0; i < poyta.getPaikat().size(); i++) {
             PaikkaLabel pl = new PaikkaLabel(poyta.getPaikat().get(i));
             paikat.add(pl);
             pl.setPreferredSize(pl.getPreferredSize());
-            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, pt, rt, tt, pakka, valitut, this, vnk));
+            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, pt, rt, tt, pakka, valitut, this, vnk, ajanottaja));
             kortit.add(pl);
             pl.repaint();
         }
@@ -111,7 +115,7 @@ public class Kayttoliittyma implements Runnable {
         uusipeli.addActionListener(upnk);
         ohje.addActionListener(onk);
         JLabel korttienMaara = new JLabel("Korttien maara pakassa: " + pakka.pakanKortit().size());
-        pakkaLabel.addMouseListener(new PakanHiirenKuuntelija(jakaja, pakkaLabel, tt, pakka, poyta, paikat, this, vnk, korttienMaara));
+        pakkaLabel.addMouseListener(new PakanHiirenKuuntelija(jakaja, pakkaLabel, tt, pakka, poyta, paikat, this, vnk, korttienMaara, ajanottaja));
         pakkaLabel.setPreferredSize(new Dimension(120,185));
         layout.putConstraint(SpringLayout.EAST, pakkaLabel,
                              -100,
@@ -125,23 +129,29 @@ public class Kayttoliittyma implements Runnable {
         layout.putConstraint(SpringLayout.EAST, korttienMaara,
                              -85,
                              SpringLayout.EAST, con);
+        layout.putConstraint(SpringLayout.NORTH, aika,
+                             5,
+                             SpringLayout.SOUTH, korttienMaara);
+        layout.putConstraint(SpringLayout.EAST, aika,
+                             -135,
+                             SpringLayout.EAST, con);
         layout.putConstraint(SpringLayout.EAST, uusipeli,
-                             -115,
+                             -120,
                              SpringLayout.EAST, con);
         layout.putConstraint(SpringLayout.NORTH, uusipeli,
-                             50,
+                             70,
                              SpringLayout.SOUTH, pakkaLabel);
         layout.putConstraint(SpringLayout.NORTH, vihje,
                              20,
                              SpringLayout.SOUTH, uusipeli);
         layout.putConstraint(SpringLayout.EAST, vihje,
-                             -125,
+                             -130,
                              SpringLayout.EAST, con);
         layout.putConstraint(SpringLayout.NORTH, ohje,
                              20,
                              SpringLayout.SOUTH, vihje);
         layout.putConstraint(SpringLayout.EAST, ohje,
-                             -125,
+                             -130,
                              SpringLayout.EAST, con);
         con.add(pakkaLabel);
         con.add(kortit);
@@ -149,6 +159,8 @@ public class Kayttoliittyma implements Runnable {
         con.add(vihje);
         con.add(ohje);
         con.add(korttienMaara);
+        con.add(aika);
+        ajanottaja.start();
         con.setBackground(new Color(0,100,0));
     }
 
