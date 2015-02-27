@@ -9,8 +9,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import pasianssi.domain.Paikka;
-
-
+/**
+ * @author Johanna
+ */
 public class PaikkaLabel extends JLabel {
     private static final int korkeus = 185;
     private static final int leveys = 120;
@@ -27,9 +28,9 @@ public class PaikkaLabel extends JLabel {
     }
     
     @Override
-    public Dimension getPreferredSize(){
-         return new Dimension(leveys, korkeus);
-     }
+    public Dimension getPreferredSize() {
+        return new Dimension(leveys, korkeus);
+    }
     
     @Override
     protected void paintComponent(Graphics g) {

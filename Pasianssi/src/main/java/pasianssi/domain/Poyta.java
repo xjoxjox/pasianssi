@@ -3,6 +3,7 @@ package pasianssi.domain;
 
 import java.util.ArrayList;
 /**
+ * @author Johanna
  * Luokka luo pöydän paikkoineen. Luokka myös tarkastaa kaikki tyhjät paikat tai 
  * onko korttien välissä tyhjiä paikkoja sekä viimeisen paikan, jossa on kortti.
  */
@@ -69,9 +70,9 @@ public class Poyta {
     * @return tyhjät paikat korttien välissä
     */
     public boolean onkoKorttienValissaTyhjia() {
-        for (int i = 0; i < this.paikat.size()-1; i++) {
+        for (int i = 0; i < this.paikat.size() - 1; i++) {
             if (this.paikat.get(i).onkoTyhja()) {             
-                for (int j = i+1; j < this.paikat.size(); j++) {
+                for (int j = i + 1; j < this.paikat.size(); j++) {
                     if (!this.paikat.get(j).onkoTyhja()) {
                         return true;
                     }
@@ -88,8 +89,8 @@ public class Poyta {
     public Paikka viimeinenPaikkaJossaKortti() {
         Paikka viimeinen = this.paikat.get(0);
         for (int i = 1; i <= this.paikat.size(); i++) {
-            if (!this.paikat.get(this.paikat.size()-i).onkoTyhja()) {
-                viimeinen = this.paikat.get(this.paikat.size()-i);
+            if (!this.paikat.get(this.paikat.size() - i).onkoTyhja()) {
+                viimeinen = this.paikat.get(this.paikat.size() - i);
                 return viimeinen;
             }
         }

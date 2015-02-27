@@ -1,35 +1,37 @@
 
 package pasianssi.domain;
 
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-
-
 /**
+ * @author Johanna
  * Luokka luo paikat, joista Pöytä koostuu, sekä asettaa ja poistaa Kortit paikasta.
  */
 public class Paikka {
     private int pystyrivi;
     private int vaakarivi;
     private Kortti kortti;
-    private boolean tyhjä;
+    private boolean tyhja;
     private boolean valittu;
-    
+    /**
+    * Konstruktorissa tarkistetaan ettei Paikka saa vääriä arvoja.
+    * Jos parametrit eivät kelpaa, annetaan virheilmoitus.
+    * @param pystyrivi pystyrivin numero
+    * @param vaakarivi vaakarivin numero
+    */
     public Paikka(int pystyrivi, int vaakarivi) {
-        if (pystyrivi<1 || pystyrivi>5) {
+        if (pystyrivi < 1 || pystyrivi > 5) {
             throw new IllegalArgumentException("Pystyrivin arvon täytyy olla 1-5");
         }
-        if (vaakarivi<1 || vaakarivi>5) {
+        if (vaakarivi < 1 || vaakarivi > 5) {
             throw new IllegalArgumentException("Vaakarivin arvon täytyy olla 1-5");
         }
         this.pystyrivi = pystyrivi;
         this.vaakarivi = vaakarivi;
-        this.tyhjä = true;
+        this.tyhja = true;
         this.valittu = false;
     }
     /**
@@ -38,14 +40,14 @@ public class Paikka {
     */
     public void asetaKortti(Kortti kortti) {
         this.kortti = kortti;
-        this.tyhjä = false;
+        this.tyhja = false;
     }
     /**
     * Metodi palauttaa totuusarvona onko paikka tyhjä.
     * @return paikan tyhjyys
     */
     public boolean onkoTyhja() {
-        return this.tyhjä;
+        return this.tyhja;
     }
     
     public Kortti getKortti() {
@@ -56,12 +58,12 @@ public class Paikka {
         return this.pystyrivi;
     }
     
-     public int getVaakarivi() {
+    public int getVaakarivi() {
         return this.vaakarivi;
     }
     
-     public boolean getValittu() {
-         return this.valittu;
+    public boolean getValittu() {
+        return this.valittu;
     }
     /**
     * Metodi asettaa paikan valituksi.
@@ -80,7 +82,7 @@ public class Paikka {
     */
     public void tyhjennaPaikka() {
         this.kortti = null;
-        this.tyhjä = true;
+        this.tyhja = true;
     }
     /**
     * Metodi hakee oikean kuvan paikalle, jos siinä on kortti.
@@ -90,14 +92,14 @@ public class Paikka {
     */
     public Image haeKuva() throws IOException {
         Image kuva = null;
-        if (onkoTyhja()) return kuva;
-        else if (!getValittu()) {
+        if (onkoTyhja()) {
+            return kuva;
+        } else if (!getValittu()) {
             String tiedosto = getKortti().toString();
-            URL kuvaURL = getClass().getResource("/" +tiedosto + "R.jpg");
+            URL kuvaURL = getClass().getResource("/" + tiedosto + "R.jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
             kuva = img;
-        }
-        else {
+        } else {
             String tiedosto = getKortti().toString();
             URL kuvaURL = getClass().getResource("/" + tiedosto + "R.jpg");
             BufferedImage img = ImageIO.read(kuvaURL);
@@ -116,8 +118,8 @@ public class Paikka {
         int korkeus = kuva.getHeight();
         for (int x = 0; x < leveys; x++) {
             for (int y = 0; y < korkeus; y++) {
-            int rGB = kuva.getRGB(x, y);
-            int r = Math.abs(((rGB >>> 16) & 0xff) - 255);
+                int rGB = kuva.getRGB(x, y);
+                int r = Math.abs(((rGB >>> 16) & 0xff) - 255);
                 int g = Math.abs(((rGB >>> 8) & 0xff) - 255);
                 int b = Math.abs((rGB & 0xff) - 255);
                 kuva.setRGB(x, y, (r << 16) | (g << 8) | b);

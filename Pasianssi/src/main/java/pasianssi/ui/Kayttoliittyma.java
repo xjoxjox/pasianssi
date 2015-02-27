@@ -26,8 +26,10 @@ import pasianssi.util.Jakaja;
 import pasianssi.util.ParienTarkastaja;
 import pasianssi.util.RivienTarkastaja;
 import pasianssi.util.TilanteenTarkastaja;
-
-
+import pasianssi.tilastot.Tilastot;
+/**
+ * @author Johanna
+ */
 public class Kayttoliittyma implements Runnable {
     private JFrame frame;
     private Pakka pakka;
@@ -38,6 +40,7 @@ public class Kayttoliittyma implements Runnable {
     private TilanteenTarkastaja tt;
     private JPanel kortit;
     private JLabel pakkaLabel;
+    private Tilastot t;
     private ArrayList<PaikkaLabel> valitut;
     private ArrayList<PaikkaLabel> paikat;
 
@@ -81,9 +84,10 @@ public class Kayttoliittyma implements Runnable {
         jakaja = new Jakaja(pakka, poyta);
         pt = new ParienTarkastaja();
         rt = new RivienTarkastaja();
+        t = new Tilastot();
         kortit = new JPanel(new FlowLayout());
-        kortit.setPreferredSize(new Dimension(700,1000));
-        kortit.setBackground(new Color(0,100,0));
+        kortit.setPreferredSize(new Dimension(700, 1000));
+        kortit.setBackground(new Color(0, 100, 0));
         valitut = new ArrayList<>();
         paikat = new ArrayList<>();
         tt = new TilanteenTarkastaja(paikat);
@@ -97,7 +101,7 @@ public class Kayttoliittyma implements Runnable {
             PaikkaLabel pl = new PaikkaLabel(poyta.getPaikat().get(i));
             paikat.add(pl);
             pl.setPreferredSize(pl.getPreferredSize());
-            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, pt, rt, tt, pakka, valitut, this, vnk, ajanottaja));
+            pl.addMouseListener(new PaikkaLabelHiirenKuuntelija(poyta, pl, pt, rt, tt, pakka, valitut, this, vnk, ajanottaja, tk, t));
             kortit.add(pl);
             pl.repaint();
         }
@@ -114,9 +118,9 @@ public class Kayttoliittyma implements Runnable {
         OhjeNapinKuuntelija onk = new OhjeNapinKuuntelija(vnk);
         uusipeli.addActionListener(upnk);
         ohje.addActionListener(onk);
-        JLabel korttienMaara = new JLabel("Korttien maara pakassa: " + pakka.pakanKortit().size());
-        pakkaLabel.addMouseListener(new PakanHiirenKuuntelija(jakaja, pakkaLabel, tt, pakka, poyta, paikat, this, vnk, korttienMaara, ajanottaja));
-        pakkaLabel.setPreferredSize(new Dimension(120,185));
+        JLabel korttienMaara = new JLabel("Korttien määrä pakassa: " + pakka.pakanKortit().size());
+        pakkaLabel.addMouseListener(new PakanHiirenKuuntelija(jakaja, pakkaLabel, tt, pakka, poyta, paikat, this, vnk, korttienMaara, ajanottaja, tk, t));
+        pakkaLabel.setPreferredSize(new Dimension(120, 185));
         layout.putConstraint(SpringLayout.EAST, pakkaLabel,
                              -100,
                              SpringLayout.EAST, con);
@@ -161,10 +165,10 @@ public class Kayttoliittyma implements Runnable {
         con.add(korttienMaara);
         con.add(aika);
         ajanottaja.start();
-        con.setBackground(new Color(0,100,0));
+        con.setBackground(new Color(0, 100, 0));
     }
 
-    private ImageIcon createImageIcon(String cUsersxerof_000Picturestmspictures) {
+    private ImageIcon createImageIcon(String cUsersxerof000Picturestmspictures) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

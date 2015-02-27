@@ -3,6 +3,7 @@ package pasianssi.util;
 import java.util.Arrays;
 import pasianssi.domain.Paikka;
 /**
+ * @author Johanna
  * Luokka tarkastaa ovatko valitut paikat samalla rivillä.
  */
 public class RivienTarkastaja {
@@ -18,10 +19,10 @@ public class RivienTarkastaja {
     * @return onko samalla rivillä
     */
     public boolean onkoParinPaikatSamallaRivilla(Paikka paikka1, Paikka paikka2) {
-        if (paikka1.getPystyrivi()==paikka2.getPystyrivi()) {
+        if (paikka1.getPystyrivi() == paikka2.getPystyrivi()) {
             return true;
         }
-        return paikka1.getVaakarivi()==paikka2.getVaakarivi();
+        return paikka1.getVaakarivi() == paikka2.getVaakarivi();
     }
     /**
     * Metodi tarkastaa ovatko valitut kuvakortit vierekkäisillä paikoilla.
@@ -33,74 +34,64 @@ public class RivienTarkastaja {
     * @see pasianssi.util.RivienTarkastaja#onkoKuvakortitJarjestyksessa(Paikka, Paikka, Paikka)
     * @return onko vierekkäisillä paikoilla ja jarjestyksessa
     */
-    public boolean onkoKuvakortitVierekkäin(Paikka paikka1, Paikka paikka2, Paikka paikka3) {
-        if (paikka1.getPystyrivi()==paikka2.getPystyrivi() && paikka2.getPystyrivi()==paikka3.getPystyrivi()) {
+    public boolean onkoKuvakortitVierekkain(Paikka paikka1, Paikka paikka2, Paikka paikka3) {
+        if (paikka1.getPystyrivi() == paikka2.getPystyrivi() && paikka2.getPystyrivi() == paikka3.getPystyrivi()) {
             int p1i = paikka1.getVaakarivi();
             int p2i = paikka2.getVaakarivi();
             int p3i = paikka3.getVaakarivi();
-            int[] paikat = {p1i,p2i,p3i};
+            int[] paikat = {p1i, p2i, p3i};
             Arrays.sort(paikat);
-            if ((paikat[0]+1==paikat[1]) && (paikat[1]+1==paikat[2])) {
-                if (paikat[0]==p1i) {
-                    if (paikat[1]==p2i) {
-                        return onkoKuvakortitJarjestyksessa(paikka1,paikka2,paikka3);
+            if ((paikat[0] + 1 == paikat[1]) && (paikat[1] + 1 == paikat[2])) {
+                if (paikat[0] == p1i) {
+                    if (paikat[1] == p2i) {
+                        return onkoKuvakortitJarjestyksessa(paikka1, paikka2, paikka3);
+                    } else {
+                        return onkoKuvakortitJarjestyksessa(paikka1, paikka3, paikka2);
                     }
-                    else {
-                        return onkoKuvakortitJarjestyksessa(paikka1,paikka3,paikka2);
+                } else if (paikat[0] == p2i) {
+                    if (paikat[1] == p1i) {
+                        return onkoKuvakortitJarjestyksessa(paikka2, paikka1, paikka3);
+                    } else {
+                        return onkoKuvakortitJarjestyksessa(paikka2, paikka3, paikka1);
                     }
-                }
-                else if (paikat[0]==p2i) {
-                    if (paikat[1]==p1i) {
-                        return onkoKuvakortitJarjestyksessa(paikka2,paikka1,paikka3);
-                    }
-                    else {
-                        return onkoKuvakortitJarjestyksessa(paikka2,paikka3,paikka1);
-                    }
-                }
-                else {
-                    if (paikat[1]==p2i) {
-                        return onkoKuvakortitJarjestyksessa(paikka3,paikka2,paikka1);
-                    }
-                    else {
-                        return onkoKuvakortitJarjestyksessa(paikka3,paikka1,paikka2);
+                } else {
+                    if (paikat[1] == p2i) {
+                        return onkoKuvakortitJarjestyksessa(paikka3, paikka2, paikka1);
+                    } else {
+                        return onkoKuvakortitJarjestyksessa(paikka3, paikka1, paikka2);
                     }
                 }
             }
         }
-        if (paikka1.getVaakarivi()==paikka2.getVaakarivi() && paikka2.getVaakarivi()==paikka3.getVaakarivi()) {
+        if (paikka1.getVaakarivi() == paikka2.getVaakarivi() && paikka2.getVaakarivi() == paikka3.getVaakarivi()) {
             int p1i = paikka1.getPystyrivi();
             int p2i = paikka2.getPystyrivi();
             int p3i = paikka3.getPystyrivi();
-            int[] paikat = {p1i,p2i,p3i};
+            int[] paikat = {p1i, p2i, p3i};
             Arrays.sort(paikat);
-            if ((paikat[0]+1==paikat[1]) && (paikat[1]+1==paikat[2])) {
-                if (paikat[0]==p1i) {
-                    if (paikat[1]==p2i) {
-                        return onkoKuvakortitJarjestyksessa(paikka1,paikka2,paikka3);
+            if ((paikat[0] + 1 == paikat[1]) && (paikat[1] + 1 == paikat[2])) {
+                if (paikat[0] == p1i) {
+                    if (paikat[1] == p2i) {
+                        return onkoKuvakortitJarjestyksessa(paikka1, paikka2, paikka3);
+                    } else {
+                        return onkoKuvakortitJarjestyksessa(paikka1, paikka3, paikka2);
                     }
-                    else {
-                        return onkoKuvakortitJarjestyksessa(paikka1,paikka3,paikka2);
+                } else if (paikat[0] == p2i) {
+                    if (paikat[1] == p1i) {
+                        return onkoKuvakortitJarjestyksessa(paikka2, paikka1, paikka3);
+                    } else {
+                        return onkoKuvakortitJarjestyksessa(paikka2, paikka3, paikka1);
                     }
-                }
-                else if (paikat[0]==p2i) {
-                    if (paikat[1]==p1i) {
-                        return onkoKuvakortitJarjestyksessa(paikka2,paikka1,paikka3);
-                    }
-                    else {
-                        return onkoKuvakortitJarjestyksessa(paikka2,paikka3,paikka1);
-                    }
-                }
-                else {
-                    if (paikat[1]==p2i) {
-                        return onkoKuvakortitJarjestyksessa(paikka3,paikka2,paikka1);
-                    }
-                    else {
-                        return onkoKuvakortitJarjestyksessa(paikka3,paikka1,paikka2);
+                } else {
+                    if (paikat[1] == p2i) {
+                        return onkoKuvakortitJarjestyksessa(paikka3, paikka2, paikka1);
+                    } else {
+                        return onkoKuvakortitJarjestyksessa(paikka3, paikka1, paikka2);
                     }
                 }
             }
         }
-         return false;
+        return false;
     }
     /**
     * Metodi tarkastaa ovatko valitut kuvakortit oikeassa järjestyksessä.
@@ -111,17 +102,16 @@ public class RivienTarkastaja {
     * @return onko kortit oikeassa jarjestyksessa
     */
     public boolean onkoKuvakortitJarjestyksessa(Paikka paikka1, Paikka paikka2, Paikka paikka3) {
-        if (paikka1.getKortti().getArvo()==11) {
-            if (paikka2.getKortti().getArvo()==12) {
-                if (paikka3.getKortti().getArvo()==13) {
+        if (paikka1.getKortti().getArvo() == 11) {
+            if (paikka2.getKortti().getArvo() == 12) {
+                if (paikka3.getKortti().getArvo() == 13) {
                     return true;
                 }
             }
-        }
-        else {
-            if (paikka3.getKortti().getArvo()==11) {
-                if (paikka2.getKortti().getArvo()==12) {
-                    if (paikka1.getKortti().getArvo()==13) {
+        } else {
+            if (paikka3.getKortti().getArvo() == 11) {
+                if (paikka2.getKortti().getArvo() == 12) {
+                    if (paikka1.getKortti().getArvo() == 13) {
                         return true;
                     }
                 }

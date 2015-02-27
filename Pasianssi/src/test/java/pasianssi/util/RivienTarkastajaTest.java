@@ -65,7 +65,7 @@ public class RivienTarkastajaTest {
         a.asetaKortti(J);
         d.asetaKortti(Q);
         g.asetaKortti(K);
-        assertTrue(tarkastaja.onkoKuvakortitVierekkäin(a, d, g));
+        assertTrue(tarkastaja.onkoKuvakortitVierekkain(a, d, g));
     }
     
     @Test
@@ -73,7 +73,7 @@ public class RivienTarkastajaTest {
         a.asetaKortti(Q);
         d.asetaKortti(J);
         g.asetaKortti(K);
-        assertFalse(tarkastaja.onkoKuvakortitVierekkäin(a, d, g));
+        assertFalse(tarkastaja.onkoKuvakortitVierekkain(a, d, g));
     }
     
     @Test
@@ -81,7 +81,7 @@ public class RivienTarkastajaTest {
         f.asetaKortti(J);
         g.asetaKortti(Q);
         a.asetaKortti(K);
-        assertFalse(tarkastaja.onkoKuvakortitVierekkäin(f, g, a));
+        assertFalse(tarkastaja.onkoKuvakortitVierekkain(f, g, a));
     }
     
     @Test
@@ -89,7 +89,7 @@ public class RivienTarkastajaTest {
         e.asetaKortti(K);
         d.asetaKortti(Q);
         c.asetaKortti(J);
-        assertTrue(tarkastaja.onkoKuvakortitVierekkäin(d, c, e));
+        assertTrue(tarkastaja.onkoKuvakortitVierekkain(d, c, e));
     }
     
     @Test
@@ -97,6 +97,6 @@ public class RivienTarkastajaTest {
         a.asetaKortti(K);
         d.asetaKortti(Q);
         g.asetaKortti(Viisi);
-        assertFalse(tarkastaja.onkoKuvakortitVierekkäin(a, d, g));
+        assertFalse(tarkastaja.onkoKuvakortitVierekkain(a, d, g));
     }
 }

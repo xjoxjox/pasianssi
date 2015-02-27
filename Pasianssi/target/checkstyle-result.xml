@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.7">
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\domain\Kortti.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\domain\Paikka.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\domain\Pakka.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\domain\Poyta.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\run\Main.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\tilastot\Tilastot.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\Kayttoliittyma.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\OhjeNapinKuuntelija.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\PaikkaLabel.java">
+<error line="16" column="30" severity="error" message="Name &apos;korkeus&apos; must match pattern &apos;^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ConstantNameCheck"/>
+<error line="17" column="30" severity="error" message="Name &apos;leveys&apos; must match pattern &apos;^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.ConstantNameCheck"/>
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\PaikkaLabelHiirenKuuntelija.java">
+<error line="1" severity="error" message="File length is 244 lines (max allowed is 200)." source="com.puppycrawl.tools.checkstyle.checks.sizes.FileLengthCheck"/>
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\PakanHiirenKuuntelija.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\TimerKuuntelija.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\UusiPeliNapinkuuntelija.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\ui\VihjeNapinKuuntelija.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\util\Jakaja.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\util\ParienTarkastaja.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\util\RivienTarkastaja.java">
+</file>
+<file name="C:\Users\Johanna\Documents\GitHub\pasianssi\Pasianssi\src\main\java\pasianssi\util\TilanteenTarkastaja.java">
+</file>
+</checkstyle>

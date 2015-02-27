@@ -6,6 +6,7 @@ import pasianssi.domain.Pakka;
 import pasianssi.domain.Poyta;
 
 /**
+ * @author Johanna
  * Luokka jakaa kortit pöydälle hallitsevan tilanteen mukaan.
  */
 public class Jakaja {

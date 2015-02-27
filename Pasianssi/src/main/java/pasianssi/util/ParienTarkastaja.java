@@ -4,12 +4,15 @@ package pasianssi.util;
 import java.util.HashMap;
 import pasianssi.domain.Kortti;
 /**
+ * @author Johanna
  * Luokka tarkastaa ovatko valitut kortit pareja tai kuvakortteja järjestyksessä.
  * Parit ovat HashMapissä.
  */
 public class ParienTarkastaja {
     private HashMap<Integer, Integer> parit;
-    
+    /**
+    * Konstruktorissa laitetaan korttiparit HashMap:in.
+    */
     public ParienTarkastaja() {
         this.parit = new HashMap<>();
         this.parit.put(1, 10);
@@ -25,9 +28,7 @@ public class ParienTarkastaja {
     * @return kuvakortti
     */
     private boolean onkoKuvakortti(Kortti kortti) {
-        return kortti.getArvo() == 11
-        || kortti.getArvo() == 12
-        || kortti.getArvo() == 13;
+        return kortti.getArvo() == 11 || kortti.getArvo() == 12 || kortti.getArvo() == 13;
     }
     /**
     * Metodi tarkastaa ovatko valitut kortit kuvakortteja.

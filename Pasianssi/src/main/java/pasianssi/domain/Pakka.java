@@ -4,6 +4,7 @@ package pasianssi.domain;
 import java.util.ArrayList;
 import java.util.Collections;
 /**
+ * @author Johanna
  * Luokka luo pakan, joka sekoitetaan ja josta jaetaan kortit pöydälle.
  */
 public class Pakka {

@@ -1,0 +1,25 @@
+zip ladattu 20.02.2015 klo 12:00
+
+En ole pelannut dotaa, mutta jos spellit toimii näillä näppäinyhdistelmillä, niin tämähän on loistava apuväline dota-pelaajille!
+
+Pari huomautusta koodista:
+
+Tämän pötkön voisi siirtää Main-luokasta Kayttoliittyma-luokkaan. Main-luokka kannattaa pitää mahdollisimman simppelinä:
+Scanner lukija = new Scanner(System.in);
+Pelaaja pelaaja = new Pelaaja("Pelaaja Pelityyppi");
+Aakkospeli aakkospeli = new Aakkospeli(pelaaja, lukija);
+Invokerpeli invokerpeli = new Invokerpeli(pelaaja, lukija);
+aakkospeli.luoAakkosto();
+invokerpeli.luoSpelliLista();
+
+spellit invoke()-metodissa on aika monta if-lausetta. Voisiko orbit-taulukon mahdolliset sisällöt tallettaa esimerkiksi stringinä HashMappiin avaimena ja arvo olisi palautettava spelli?
+Eli esim:
+"111", COLDSNAP
+"112", GHOSTWALK
+"113", ICEWALK
+......
+Sitten invoke()-metodissa muuttaisi orbit-taulukon sisällön stringiksi, tai miksei tallettaisi orbit-taulukkoon vaikka charreja, etenkin kun ne syötetään alunperinkin kirjaimina. Stringin muodostaminen niistä olisi siten helppoa. Sitten katsoo löytyykö HashMapista tuota avainta ja palauttaa sitä vastaavan spellin. Pelin alussa joutuisi luomaan tuon HashMapin, mutta spellien hakeminen yksinkertaistuisi.
+
+Muuten luokat ja metodit vaikuttavat selkeiltä ja lyhyiltä. Pelin myöhempi laajentaminenkin onnistuu helposti useiden pakettien ansiosta.
+
+Testejä on mukavasti oleellisille luokille ja ne on nimetty kuvaavasti.
