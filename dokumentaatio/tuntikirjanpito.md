@@ -21,3 +21,5 @@ Tuntikirjanpito
 18.02.2015  3h  Lisätoiminnallisuuksia
 
 19.02.2015  3h  Timerin lisäys ja sekvenssikaavioiden päivitys
+
+27.02.2015  10h Ohjelman viimeistely
