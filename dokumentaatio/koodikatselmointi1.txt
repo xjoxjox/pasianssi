@@ -6,4 +6,4 @@ Testit oli myös hyvin jaettu omiin paketteihin ja luokkiin ja ne menivät läpi. K
 Hahmo-luokalle olisi tarpeen jonkinlainen varmistus siitä, ettei hahmoa pysty siirtämään ulos pelialueelta. Ja sitä myöten testit, ettei hyväksy vääriä arvoja.
 Lupaavalta vaikuttava koodi.
 
-xjoxjox
+- xjoxjox
